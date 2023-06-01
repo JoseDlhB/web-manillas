@@ -9,6 +9,8 @@ const [tipoSeleccionado, setTipoSeleccionado] = useState('');
 const [pagoSeleccionado, setPagoSeleccionado] = useState('');
 const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState('');
 
+const Producto = () => {
+
     useEffect(() => {
         const obtenerDijes = async() => {
             try{ await onSnapshot(
@@ -30,10 +32,22 @@ const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState('');
 
     return (
         <div>
-            <h2>Manillas disponibles:</h2>
+
+            <div style={{ display: 'flex' }}></div>
+            
+            <h1>MANILLAS LA BALLENA AZUL</h1>
+            <hr/>
+            <img src="https://cdnx.jumpseller.com/urbenmood/image/6850674/PS3493_Manilla_Pulsera_Hombres_Vintage_Cuero_Gancho_Marron_20cm.png?1684679556" alt="Manilla cuero" width="300" height="200"/>
+            <hr/> 
+            <label for="mate">Material:</label>
+            <select id="mate" onChange={(e) => setMaterialSeleccionado(e.target.value)}>
+            <option value="vac"> - </option>
+            <option value="c">Cuero</option>
+            <option value="k">Cuerda</option>
+            </select>
+            <hr/>
         </div>
     )
     }
 
 export default Producto
-
