@@ -46,6 +46,13 @@ const Producto = () => {
             <option value="k">Cuerda</option>
             </select>
             <hr/>
+            <label for="dije">Dije:</label>
+            <select id="dije" onChange={(e) => setDijeSeleccionado(e.target.value)}>
+            <option value="vac"> - </option>
+            <option value="a">Ancla</option>
+            <option value="m">Martillo</option>
+            </select>
+            <hr/>
         </div>
     )
     }
