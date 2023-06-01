@@ -8,10 +8,11 @@ import {getFirestore} from 'firebase/firestore'// Import the functions you need 
 const firebaseConfig = {
   apiKey: "AIzaSyBqu6SubZR_1OiNdMDdkdDx0fSFnz8NBHY",
   authDomain: "bd-manillas.firebaseapp.com",
+  databaseURL: "https://bd-manillas-default-rtdb.firebaseio.com",
   projectId: "bd-manillas",
   storageBucket: "bd-manillas.appspot.com",
   messagingSenderId: "596481432746",
-  appId: "1:596481432746:web:9e74d930c60a3237e804d3"
+  appId: "1:596481432746:web:16d5ced73df2b5fee804d3"
 };
 
 // Initialize Firebase

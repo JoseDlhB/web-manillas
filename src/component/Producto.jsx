@@ -1,6 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react';
 import {db} from '../firebase'
 import {collection, doc, onSnapshot, query} from 'firebase/firestore'
+
+const Producto = () => {
 
 const [dijes, setDijes] = useState([]);
 const [materialSeleccionado, setMaterialSeleccionado] = useState('');
@@ -9,15 +12,13 @@ const [tipoSeleccionado, setTipoSeleccionado] = useState('');
 const [pagoSeleccionado, setPagoSeleccionado] = useState('');
 const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState('');
 
-const Producto = () => {
-
     useEffect(() => {
         const obtenerDijes = async() => {
             try{ await onSnapshot(
                 collection(db, 'manillas'), (query) =>{
                     setDijes(query.docs.map((doc) => ({...doc.data(), id:doc.id})))
                 })
-            }catch(error){
+            }catch(e){
             console.log(e)
             }
         }
@@ -35,9 +36,9 @@ const Producto = () => {
 
             <div style={{ display: 'flex' }}></div>
             
-            <h1>MANILLAS LA BALLENA AZUL</h1>
+            <h1 style={{textAlign: 'center'}}>BALLENA AZUL STORE</h1>
             <hr/>
-            <img src="https://cdnx.jumpseller.com/urbenmood/image/6850674/PS3493_Manilla_Pulsera_Hombres_Vintage_Cuero_Gancho_Marron_20cm.png?1684679556" alt="Manilla cuero" width="300" height="200"/>
+            <img src="https://cdn.shopify.com/s/files/1/0710/2477/1391/products/manillarustica_grande.jpg?v=1675646400" alt="Manilla cuero" width="300" height="200" style={{textAlign:"center"}}/>
             <hr/> 
             <label for="mate">Material:</label>
             <select id="mate" onChange={(e) => setMaterialSeleccionado(e.target.value)}>
@@ -68,6 +69,16 @@ const Producto = () => {
             <option value="d">Dolares</option>
             <option value="p">Pesos</option>
             </select>
+
+            <ul className="list-group">
+                    {  
+                        dijes.map(item =>(
+                            <div className="list-group-item" key={item.id}>
+                                <h1 className="lead">{item[opcionesSeleccionadas]}</h1>
+                            </div>
+                        ))   
+                    }        
+            </ul> 
 
         </div>
     )
