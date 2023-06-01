@@ -53,6 +53,15 @@ const Producto = () => {
             <option value="m">Martillo</option>
             </select>
             <hr/>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" onChange={(e) => setTipoSeleccionado(e.target.value)}>
+            <option value="vac"> - </option>
+            <option value="o">Oro</option>
+            <option value="or">Oro rosado</option>
+            <option value="p">Plata</option>
+            <option value="n">Niquel</option>
+            </select>
+            <hr/>
         </div>
     )
     }
