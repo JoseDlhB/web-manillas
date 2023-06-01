@@ -62,6 +62,13 @@ const Producto = () => {
             <option value="n">Niquel</option>
             </select>
             <hr/>
+            <label for="pago">Metodo de pago:</label>
+            <select id="pago" onChange={(e) => setPagoSeleccionado(e.target.value)}>
+            <option value="vac"> - </option>
+            <option value="d">Dolares</option>
+            <option value="p">Pesos</option>
+            </select>
+
         </div>
     )
     }
